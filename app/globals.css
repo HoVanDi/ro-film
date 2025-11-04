@@ -1,42 +1,60 @@
+@import "tailwindcss";
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --theme-text-primary: #071d31;
+  --theme-text-secondary: #5c5c5c;
+  --theme-text-primary-invert: #fff;
+  --theme-text-secondary-invert: #e3e3e3;
+  --theme-text-accent: #a78552;
+  --theme-text-accent-secondary: #0e3c62;
+  --theme-text-link: #7b623d;
+  --theme-text-link-invert: #fff;
+  --theme-text-success: #008a17;
+  --theme-text-error: #ae0f0f;
+  --theme-surface-primary: #fff;
+  --theme-surface-secondary: #f7f3ed;
+  --theme-surface-invert: #071d31;
+  --theme-surface-accent: #0e3c62;
+  --theme-surface-accent-secondary: #bc965c;
+  --theme-surface-success: #008a17;
+  --theme-surface-error: #ae0f0f;
+  --theme-border-primary: #04111b;
+  --theme-border-secondary: #eadecc;
+  --theme-border-invert: #decbaf;
+  --theme-border-accent: #04111b;
+  --theme-border-error: #ae0f0f;
+  --theme-border-success: #008a17;
+  --theme-cta-primary-surface: #eadecc;
+  --theme-cta-primary-surface-hover: #decbaf;
+  --theme-cta-primary-surface-disabled: #eadecc;
+  --theme-cta-primary-text: #5c4a2d;
+  --theme-cta-primary-text-disabled: #fff;
+  --theme-cta-primary-icon-text: #7b623d;
+  --theme-cta-secondary-border: #decbaf;
+  --theme-cta-secondary-text: #5c4a2d;
+  --theme-cta-secondary-text-disabled: #decbaf;
+  --theme-cta-secondary-icon-text: #7b623d;
+  --theme-cta-secondary-reversed-border: #eadecc;
+  --theme-cta-secondary-reversed-text: #eadecc;
+  --property-type-background: transparent;
+  --theme-spacer: 0.25rem;
+  --modal-spacer: 0.25rem;
+  --modal-height: calc(var(--app-height) - (2 * var(--modal-spacer)));
+  --filter-height: calc(var(--app-height) - 5rem);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.bg-theme-surface-invert {
+  background-color: var(--theme-surface-invert);
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
+.text-cta-secondary-color {
+  color: var(--theme-cta-secondary-text);
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.text-secondary {
+  color: var(--theme-text-secondary);
 }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
+.background-color {
+  background-color: var(--theme-surface-secondary);
 }
