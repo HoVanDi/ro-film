@@ -1,7 +1,9 @@
 "use client";
 import { useEffect, useState } from "react";
-
-export default function Header() {
+interface HeaderProps {
+  setShowLogin: (show: boolean) => void;
+}
+export default function Header({ setShowLogin }: HeaderProps) {
   const [isFixed, setIsFixed] = useState(false);
 
   useEffect(() => {
@@ -132,12 +134,15 @@ export default function Header() {
             </div>
           </div>
           <div id="main_user">
-            <a className="button-user button-login">
-              <div className="line-center">
+            <button
+              className="button-user button-login"
+              onClick={() => setShowLogin(true)}
+            >
+              <div className="line-center flex items-center space-x-2">
                 <i className="fa-solid fa-user ms-1"></i>
                 <span>Thành viên</span>
               </div>
-            </a>
+            </button>
           </div>
         </div>
       </div>

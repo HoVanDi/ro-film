@@ -1,0 +1,92 @@
+// src/data/top10PhimBo.ts
+
+export const topFilm = [
+  {
+    id: 1,
+    number: 1,
+    title: "Ám Hà Truyện",
+    alias: "Blood River",
+    href: "/phim/am-ha-truyen.sC2ZXcjc",
+    img: "https://static.nutscdn.com/vimg/400-0/6c9779087671f044479dec8f8e06ce28.jpg",
+    tags: ["T13", "Phần 1", "Tập 28"],
+    pins: [
+      { type: "line-pd", value: 28 },
+      { type: "line-tm", value: 16 },
+    ],
+  },
+  {
+    id: 2,
+    number: 2,
+    title: "Hãy Lấy Em Đi",
+    alias: "Would You Marry Me?",
+    href: "/phim/hay-lay-em-di.et0KxZQy",
+    img: "https://static.nutscdn.com/vimg/400-0/aa092c8d4441b391d1a81530faa39a39.jpg",
+    tags: ["T16", "Phần 1", "Tập 8"],
+    pins: [
+      { type: "line-pd", value: 8 },
+      { type: "line-tm", value: 6 },
+    ],
+  },
+  {
+    id: 3,
+    number: 3,
+    title: "Nhập Thanh Vân",
+    alias: "Love in the Clouds",
+    href: "/phim/nhap-thanh-van.8YvAYF9o",
+    img: "https://static.nutscdn.com/vimg/400-0/3b94b724a4e3e771ef0050439e60189f.jpg",
+    tags: ["T16", "Phần 1", "Tập 36"],
+    pins: [
+      { type: "line-pd", value: 36 },
+      { type: "line-tm", value: 32 },
+    ],
+  },
+  {
+    id: 4,
+    number: 4,
+    title: "Thiên Địa Kiếm Tâm",
+    alias: "Sword and Beloved",
+    href: "/phim/thien-dia-kiem-tam.5rQtY6RF",
+    img: "https://static.nutscdn.com/vimg/400-0/fad026ae47cdc82b581d99177618faaa.jpg",
+    tags: ["T13", "Phần 1", "Tập 23"],
+    pins: [
+      { type: "line-pd", value: 23 },
+      { type: "line-tm", value: 23 },
+    ],
+  },
+  {
+    id: 5,
+    number: 5,
+    title: "Thần Đèn ơi, Ước Đi",
+    alias: "Genie, Make a Wish",
+    href: "/phim/than-den-oi-uoc-di.Ur7vsYlG",
+    img: "https://static.nutscdn.com/vimg/400-0/fd3825da68896525ad1fa3ad4c78447b.jpg",
+    tags: ["T16", "Phần 1", "Tập 13"],
+    pins: [
+      { type: "line-pd", value: 13 },
+      { type: "line-lt", value: 13 },
+    ],
+  },
+  {
+    id: 6,
+    number: 6,
+    title: "Thủy Long Ngâm",
+    alias: "Whispers of Fate",
+    href: "/phim/thuy-long-ngam.lTaoogB3",
+    img: "https://static.nutscdn.com/vimg/400-0/6946fb51134899d6f8b1f0385e72638b.jpg",
+    tags: ["T13", "Phần 1", "Tập 19"],
+    pins: [
+      { type: "line-pd", value: 19 },
+      { type: "line-tm", value: 17 },
+    ],
+  },
+  {
+    id: 7,
+    number: 7,
+    title: "Năm Ngón Tay Diệu Kỳ",
+    alias: "Spirit Fingers",
+    href: "/phim/nam-ngon-tay-dieu-ky.U0skPmay",
+    img: "https://static.nutscdn.com/vimg/400-0/4fcb747209804d633c9725c1c499926c.jpg",
+    tags: ["T16", "Phần 1", "Tập 4"],
+    pins: [{ type: "line-pd", value: 4 }],
+  },
+];
