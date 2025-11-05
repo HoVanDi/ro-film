@@ -1,4 +1,16 @@
+"use client";
+import { useEffect, useState } from "react";
+
 export default function WatchMoviePage() {
+  const [showFirst, setShowFirst] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowFirst(false);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <>
       <div id="body-load">
@@ -39,15 +51,28 @@ export default function WatchMoviePage() {
             </div>
             <div className="player-ratio">
               <div className="ratio ratio-16x9">
-                <iframe
-                  width="560"
-                  height="315"
-                  id="embed-player"
-                  allow="autoplay; encrypted-media; picture-in-picture;"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                  src="https://goatembed.com/fRx9ZxsG?version=1"
-                ></iframe>
+                {showFirst ? (
+                  <iframe
+                    width="560"
+                    height="315"
+                    id="embed-player"
+                    allow="autoplay; encrypted-media; picture-in-picture;"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                    src="https://goatembed.com/fRx9ZxsG?version=1"
+                  ></iframe>
+                ) : (
+                  <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/RYUFG3ZA0DA?si=Z56X98zgUuHibh7E"
+                    title="YouTube video player"
+                    frameBorder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerPolicy="strict-origin-when-cross-origin"
+                    allowFullScreen
+                  ></iframe>
+                )}
               </div>
               <div className="line-center player-control">
                 <div className="line-center control-items">
@@ -345,7 +370,7 @@ export default function WatchMoviePage() {
                         id="cm-690ad2b0e896b1f2abf96d1d"
                       >
                         <div className="user-avatar">
-                          <img src="/images/avatars/pack1/35.jpg" />
+                          <img src="https://www.rophim.li/images/avatars/pack4/08.jpg" />
                         </div>
                         <div className="info">
                           <div className="comment-header">
@@ -398,7 +423,7 @@ export default function WatchMoviePage() {
                         id="cm-690aceaf0eefc2f06abbcd04"
                       >
                         <div className="user-avatar">
-                          <img src="/images/avatars/pack1/12.jpg" />
+                          <img src="https://www.rophim.li/images/avatars/pack4/08.jpg" />
                         </div>
                         <div className="info">
                           <div className="comment-header">
@@ -454,7 +479,7 @@ export default function WatchMoviePage() {
                         id="cm-690acdcd3131d4a85d4c2307"
                       >
                         <div className="user-avatar">
-                          <img src="/images/avatars/pack1/37.jpg" />
+                          <img src="https://www.rophim.li/images/avatars/pack1/13.jpg" />
                         </div>
                         <div className="info">
                           <div className="comment-header">
@@ -508,7 +533,7 @@ export default function WatchMoviePage() {
                             <img src="https://www.rophim.li/images/sponsor_icon.webp" />
                           </div>
                           <div className="subject">
-                            <div className="flex gap-5">
+                            <div className="flex gap-6">
                               <div>
                                 <div className="heading-xs mb-1">789Club</div>
                                 <p className="mb-1">
@@ -563,7 +588,7 @@ export default function WatchMoviePage() {
                         id="cm-690ab8c8a93e962633e2f23c"
                       >
                         <div className="user-avatar">
-                          <img src="/images/avatars/pack2/04.jpg" />
+                          <img src="https://www.rophim.li/images/avatars/pack6/08.jpg" />
                         </div>
                         <div className="info">
                           <div className="comment-header">
@@ -622,7 +647,7 @@ export default function WatchMoviePage() {
                         id="cm-690a89de0aee734bbe866dd6"
                       >
                         <div className="user-avatar">
-                          <img src="/images/avatars/pack6/02.jpg" />
+                          <img src="https://www.rophim.li/images/avatars/pack1/12.jpg" />
                         </div>
                         <div className="info">
                           <div className="comment-header">
@@ -682,7 +707,7 @@ export default function WatchMoviePage() {
                         id="cm-690a69580aee734bbe860617"
                       >
                         <div className="user-avatar">
-                          <img src="/images/avatars/pack6/01.jpg" />
+                          <img src="https://www.rophim.li/images/avatars/pack1/12.jpg" />
                         </div>
                         <div className="info">
                           <div className="comment-header">
@@ -741,7 +766,7 @@ export default function WatchMoviePage() {
                         id="cm-690a5a243a5ca6f618bb5eaf"
                       >
                         <div className="user-avatar">
-                          <img src="/images/avatars/pack1/26.jpg" />
+                          <img src="https://www.rophim.li/images/avatars/pack1/12.jpg" />
                         </div>
                         <div className="info">
                           <div className="comment-header">
@@ -793,7 +818,7 @@ export default function WatchMoviePage() {
                         id="cm-690a451b59b2670d94d641d1"
                       >
                         <div className="user-avatar">
-                          <img src="/images/avatars/pack6/08.jpg" />
+                          <img src="https://www.rophim.li/images/avatars/pack1/12.jpg" />
                         </div>
                         <div className="info">
                           <div className="comment-header">
@@ -846,7 +871,7 @@ export default function WatchMoviePage() {
                         id="cm-690a44fe2cf2bdaa0617ef67"
                       >
                         <div className="user-avatar">
-                          <img src="/images/avatars/pack6/08.jpg" />
+                          <img src="https://www.rophim.li/images/avatars/pack1/12.jpg" />
                         </div>
                         <div className="info">
                           <div className="comment-header">
@@ -896,7 +921,7 @@ export default function WatchMoviePage() {
                         id="cm-690a44c438cd259235909c9f"
                       >
                         <div className="user-avatar">
-                          <img src="/images/avatars/pack6/08.jpg" />
+                          <img src="https://www.rophim.li/images/avatars/pack1/12.jpg" />
                         </div>
                         <div className="info">
                           <div className="comment-header">
@@ -949,7 +974,7 @@ export default function WatchMoviePage() {
                         id="cm-690a37755ec532bfc98dd10c"
                       >
                         <div className="user-avatar">
-                          <img src="/images/avatars/pack6/05.jpg" />
+                          <img src="https://www.rophim.li/images/avatars/pack1/12.jpg" />
                         </div>
                         <div className="info">
                           <div className="comment-header">
@@ -1006,7 +1031,7 @@ export default function WatchMoviePage() {
                         id="cm-690a224154c7d6e11d7e836f"
                       >
                         <div className="user-avatar">
-                          <img src="/images/avatars/pack5/15.jpg" />
+                          <img src="https://www.rophim.li/images/avatars/pack1/12.jpg" />
                         </div>
                         <div className="info">
                           <div className="comment-header">
@@ -1061,7 +1086,7 @@ export default function WatchMoviePage() {
                         id="cm-690a1b57764ebaf8763a6d90"
                       >
                         <div className="user-avatar">
-                          <img src="/images/avatars/pack6/08.jpg" />
+                          <img src="https://www.rophim.li/images/avatars/pack1/12.jpg" />
                         </div>
                         <div className="info">
                           <div className="comment-header">
@@ -1111,7 +1136,7 @@ export default function WatchMoviePage() {
                         id="cm-690a0fbd12e681b4d6ea5ac6"
                       >
                         <div className="user-avatar">
-                          <img src="/images/avatars/pack2/09.jpg" />
+                          <img src="https://www.rophim.li/images/avatars/pack1/12.jpg" />
                         </div>
                         <div className="info">
                           <div className="comment-header">
@@ -1161,7 +1186,7 @@ export default function WatchMoviePage() {
                         id="cm-690a0ce04d00fe323b6ccfc1"
                       >
                         <div className="user-avatar">
-                          <img src="/images/avatars/pack1/33.jpg" />
+                          <img src="https://www.rophim.li/images/avatars/pack1/12.jpg" />
                         </div>
                         <div className="info">
                           <div className="comment-header">
@@ -1211,7 +1236,7 @@ export default function WatchMoviePage() {
                         id="cm-690a07ed12e681b4d6e94d28"
                       >
                         <div className="user-avatar">
-                          <img src="/images/avatars/pack4/07.jpg" />
+                          <img src="https://www.rophim.li/images/avatars/pack1/12.jpg" />
                         </div>
                         <div className="info">
                           <div className="comment-header">
@@ -1261,7 +1286,7 @@ export default function WatchMoviePage() {
                         id="cm-6909faa5bf6e720a6efc0d67"
                       >
                         <div className="user-avatar">
-                          <img src="/images/avatars/pack2/04.jpg" />
+                          <img src="https://www.rophim.li/images/avatars/pack1/12.jpg" />
                         </div>
                         <div className="info">
                           <div className="comment-header">
@@ -1314,7 +1339,7 @@ export default function WatchMoviePage() {
                         id="cm-6909ed2669a33c40de76f026"
                       >
                         <div className="user-avatar">
-                          <img src="/images/avatars/pack5/15.jpg" />
+                          <img src="https://www.rophim.li/images/avatars/pack1/12.jpg" />
                         </div>
                         <div className="info">
                           <div className="comment-header">
