@@ -1,6 +1,4 @@
-import { Swiper, SwiperSlide } from "swiper/react";
 import { commentsData } from "./MockData";
-import { Navigation } from "swiper/modules";
 
 export default function CommentList() {
   return (
