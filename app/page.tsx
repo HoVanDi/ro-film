@@ -6,7 +6,7 @@ import CommentList from "@/src/components/CommentList/page";
 import NewFilm from "@/src/components/Movies/New/page";
 import TopFilm from "@/src/components/Movies/TopFilm/page";
 import CinemaFilm from "@/src/components/Movies/Cinema/page";
-import AnimeTreasure from "@/src/components/AnimeTreasure/page";
+import AnimeTreasure from "../src/components/AnimeTreasure/page";
 import SuggestedContentPage from "@/src/components/SuggestedContent/page";
 import SingleFilmPage from "@/src/components/SingleFilm/page";
 export default function Home() {
