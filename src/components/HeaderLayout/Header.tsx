@@ -40,7 +40,7 @@ export default function Header({ setShowLogin }: HeaderProps) {
             <i className="fa-solid fa-magnifying-glass"></i>
           </div>
         </div>
-        <a id="logo" title="Rophim" href="/phimhay">
+        <a id="logo" title="Rophim" href="/">
           <img src="https://www.rophim.li/images/logo.svg" alt="RoPhim" />
         </a>
         <div id="search">
