@@ -1,8 +1,8 @@
 "use client";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import LoginPage from "@/src/components/Login/page";
 import Header from "./Header";
+import LoginPage from "../Login/page";
 
 export default function Page() {
   const [showLogin, setShowLogin] = useState(false);

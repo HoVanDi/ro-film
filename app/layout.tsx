@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import "./style.css";
-import Footer from "@/src/components/Footer/page";
-import HeaderLayout from "@/src/components/HeaderLayout/page";
+import HeaderLayout from "@/components/HeaderLayout/page";
+import Footer from "@/components/Footer/page";
 
 export const metadata: Metadata = {
   title: "RoPhim - Xem Phim Hay Nhất Miễn Phí",

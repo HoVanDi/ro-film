@@ -1,14 +1,14 @@
 "use client";
 import { useEffect, useState } from "react";
-import Banner from "@/src/components/Banner/Banner";
-import CardFilm from "@/src/components/NewFilm/page";
-import CommentList from "@/src/components/CommentList/page";
-import NewFilm from "@/src/components/Movies/New/page";
-import TopFilm from "@/src/components/Movies/TopFilm/page";
-import CinemaFilm from "@/src/components/Movies/Cinema/page";
-import AnimeTreasure from "../src/components/AnimeTreasure/page";
-import SuggestedContentPage from "@/src/components/SuggestedContent/page";
-import SingleFilmPage from "@/src/components/SingleFilm/page";
+import Banner from "@/components/Banner/Banner";
+import CardFilm from "@/components/NewFilm/page";
+import CommentList from "@/components/CommentList/page";
+import NewFilm from "@/components/Movies/New/page";
+import TopFilm from "@/components/Movies/TopFilm/page";
+import CinemaFilm from "@/components/Movies/Cinema/page";
+import AnimeTreasure from "@/components/AnimeTreasure/page";
+import SuggestedContentPage from "@/components/SuggestedContent/page";
+import SingleFilmPage from "@/components/SingleFilm/page";
 export default function Home() {
   const [shrink, setShrink] = useState(false);
 
