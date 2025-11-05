@@ -132,6 +132,7 @@ button {
 }
 
 .btn:hover {
+  cursor: pointer;
   opacity: 0.9;
 }
 
@@ -230,6 +231,7 @@ button {
   background-color: var(--primary-color) !important;
   color: var(--primary-button-text) !important;
   border-color: var(--primary-color) !important;
+  width: 100%;
 }
 
 .btn-secondary {
@@ -6521,6 +6523,12 @@ body.focus-mod .player-ratio .control-items .item {
 
 .form-w-icon {
   position: relative;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .form-w-icon .form-control {

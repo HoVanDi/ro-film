@@ -135,7 +135,7 @@ export default function Header({ setShowLogin }: HeaderProps) {
           </div>
           <div id="main_user">
             <button
-              className="button-user button-login"
+              className="btn button-user button-login"
               onClick={() => setShowLogin(true)}
             >
               <div className="line-center flex items-center space-x-2">
