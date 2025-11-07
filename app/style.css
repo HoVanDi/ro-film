@@ -1650,6 +1650,7 @@ header .header-elements {
   font-weight: 800;
   font-style: italic;
   -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
 }
 
 .v-thumbnail .pin-thumb {
@@ -5342,6 +5343,9 @@ body.base-load {
 
   .modal-login .modal-dialog .modal-content {
     padding: 4rem 4rem 4rem calc(420px + 4rem);
+  }
+  .modal-login .modal-dialog .modal-content:before {
+    width: 420px !important;
   }
 }
 

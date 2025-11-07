@@ -1,3 +1,4 @@
+import { Swiper, SwiperSlide } from "swiper/react";
 import { cinemaMovies } from "./mockData";
 
 export default function CinemaFilm() {
@@ -37,64 +38,76 @@ export default function CinemaFilm() {
                   </svg>
                 </button>
               </div>
-              <div className="swiper swiper-initialized swiper-horizontal">
-                <div className="swiper-wrapper translate-x-0 translate-y-0 transition-transform duration-300 ease-in-out">
-                  {cinemaMovies?.map((movie) => (
-                    <div
-                      key={movie.id}
-                      className="swiper-slide swiper-slide-active !w-[413.333px] mr-4"
-                    >
-                      <div className="sw-cover">
-                        <a
-                          className="v-thumbnail v-thumbnail-hoz"
-                          href={movie.href}
-                        >
-                          <div className="pin-new m-pin-new">
-                            <div className="line-center line-pd">P.Đề</div>
-                          </div>
-                          <div>
+              <Swiper
+                loop={true}
+                spaceBetween={16}
+                breakpoints={{
+                  0: {
+                    slidesPerView: 2,
+                    spaceBetween: 8,
+                  },
+                  1024: {
+                    slidesPerView: 3,
+                    spaceBetween: 8,
+                  },
+                  1600: {
+                    slidesPerView: 4,
+                    spaceBetween: 8,
+                  },
+                }}
+              >
+                {cinemaMovies?.map((movie) => (
+                  <SwiperSlide key={movie.id}>
+                    <div className="sw-cover">
+                      <a
+                        className="v-thumbnail v-thumbnail-hoz"
+                        href={movie.href}
+                      >
+                        <div className="pin-new m-pin-new">
+                          <div className="line-center line-pd">P.Đề</div>
+                        </div>
+                        <div>
+                          <img
+                            alt={movie.title}
+                            loading="lazy"
+                            src={movie.cover}
+                          />
+                        </div>
+                      </a>
+                      <div className="h-item">
+                        <div className="v-thumb-m">
+                          <a className="v-thumbnail" href={movie.href}>
                             <img
-                              alt={movie.title}
+                              alt={`Xem Phim ${movie.title} Vietsub HD Online - Rophim`}
                               loading="lazy"
-                              src={movie.cover}
+                              src={movie.thumb}
                             />
-                          </div>
-                        </a>
-                        <div className="h-item">
-                          <div className="v-thumb-m">
-                            <a className="v-thumbnail" href={movie.href}>
-                              <img
-                                alt={`Xem Phim ${movie.title} Vietsub HD Online - Rophim`}
-                                loading="lazy"
-                                src={movie.thumb}
-                              />
+                          </a>
+                        </div>
+                        <div className="info">
+                          <h4 className="item-title lim-1">
+                            <a title={movie.title} href={movie.href}>
+                              {movie.title}
                             </a>
-                          </div>
-                          <div className="info">
-                            <h4 className="item-title lim-1">
-                              <a title={movie.title} href={movie.href}>
-                                {movie.title}
-                              </a>
-                            </h4>
-                            <h4 className="alias-title lim-1 mb-1">
-                              <a title={movie.alias} href={movie.href}>
-                                {movie.alias}
-                              </a>
-                            </h4>
-                            <div className="info-line">
-                              <div className="tag-small">
-                                <strong>{movie.tag}</strong>
-                              </div>
-                              <div className="tag-small">{movie.year}</div>
-                              <div className="tag-small">{movie.duration}</div>
+                          </h4>
+                          <h4 className="alias-title lim-1 mb-1">
+                            <a title={movie.alias} href={movie.href}>
+                              {movie.alias}
+                            </a>
+                          </h4>
+                          <div className="info-line">
+                            <div className="tag-small">
+                              <strong>{movie.tag}</strong>
                             </div>
+                            <div className="tag-small">{movie.year}</div>
+                            <div className="tag-small">{movie.duration}</div>
                           </div>
                         </div>
                       </div>
                     </div>
-                  ))}
-                </div>
-              </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
           </div>
         </div>

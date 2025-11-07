@@ -5,6 +5,8 @@ interface HeaderProps {
 }
 export default function Header({ setShowLogin }: HeaderProps) {
   const [isFixed, setIsFixed] = useState(false);
+  const [isToggled, setIsToggled] = useState(false);
+  const [searchQuery, setSearchQuery] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,21 +21,35 @@ export default function Header({ setShowLogin }: HeaderProps) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleToggle = () => {
+    setIsToggled(!isToggled);
+  };
+
+  const handleSearch = () => {
+    setSearchQuery(!searchQuery);
+  };
+
   return (
     <header
       className={`fly transition-all duration-200 ease-linear ${
         isFixed ? "fixed bg-[#001b36] shadow-md" : "absolute bg-transparent"
       }`}
     >
-      <div className="header-elements">
-        <div className="for-mobile menu-toggle ">
+      <div className={`header-elements ${searchQuery ? "simple" : ""}`}>
+        <div
+          className={`for-mobile menu-toggle ${isToggled ? "toggled" : ""}`}
+          onClick={handleToggle}
+        >
           <div className="icon-menu">
             <span></span>
             <span></span>
             <span></span>
           </div>
         </div>
-        <div className="for-mobile search-toggle ">
+        <div
+          className={`for-mobile search-toggle ${searchQuery ? "toggled" : ""}`}
+          onClick={handleSearch}
+        >
           <div className="icon-search">
             <span></span>
             <span></span>
@@ -43,7 +59,7 @@ export default function Header({ setShowLogin }: HeaderProps) {
         <a id="logo" title="Rophim" href="/">
           <img src="https://www.rophim.li/images/logo.svg" alt="RoPhim" />
         </a>
-        <div id="search">
+        <div id="search" className={searchQuery ? "toggled" : ""}>
           <div className="search-elements">
             <div className="search-icon">
               <i className="fa-solid fa-magnifying-glass"></i>
@@ -55,7 +71,7 @@ export default function Header({ setShowLogin }: HeaderProps) {
             />
           </div>
         </div>
-        <div className="el-group ">
+        <div className={`el-group ${isToggled ? "toggled" : ""}`}>
           <div id="main_menu">
             <div className="menu-item">
               <a title="Phim lẻ" href="/phim-le">

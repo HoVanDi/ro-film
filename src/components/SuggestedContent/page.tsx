@@ -1,7 +1,7 @@
 export default function SuggestedContentPage() {
   return (
     <div>
-      <div className="sspp-area is-wide">
+      <div className="sspp-area is-wide mb-10">
         <div className="display-single is-demo">
           <a
             href="https://lu88.com/khuyen-mai/vqmm?i=lu0a0001634&amp;utm_source=rophimme&amp;utm_medium=banner-wide-1200x110-1&amp;utm_campaign=cpd&amp;utm_term=phim&amp;referrer_domain=www.rophim.me"
@@ -58,7 +58,7 @@ export default function SuggestedContentPage() {
               </div>
             </a>
             <a className="row-topic" href="">
-              <div className="mask bg-[rgb(119, 97, 180)]"></div>
+              <div className="mask bg-[#7761b4]"></div>
               <div className="intro">
                 <div className="heading-md lim-2 mb-0">Lồng Tiếng Cực Mạnh</div>
                 <div className="info">
@@ -70,7 +70,7 @@ export default function SuggestedContentPage() {
               </div>
             </a>
             <a className="row-topic" href="">
-              <div className="mask bg-[rgb(205, 126, 95)]"></div>
+              <div className="mask bg-[#7761b4]"></div>
               <div className="intro">
                 <div className="heading-md lim-2 mb-0">Xuyên Không</div>
                 <div className="info">
@@ -82,7 +82,7 @@ export default function SuggestedContentPage() {
               </div>
             </a>
             <a className="row-topic" href="">
-              <div className="mask bg-[rgb(167, 57, 57);"></div>
+              <div className="mask bg-[#a73939]"></div>
               <div className="intro">
                 <div className="heading-md lim-2 mb-0">Cổ Trang</div>
                 <div className="info">

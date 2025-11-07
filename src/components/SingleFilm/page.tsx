@@ -1,3 +1,4 @@
+import { Swiper, SwiperSlide } from "swiper/react";
 import { movies } from "../Movies/New/mockData";
 
 export default function SingleFilmPage() {
@@ -37,47 +38,71 @@ export default function SingleFilmPage() {
                   </svg>
                 </button>
               </div>
-              <div className="swiper swiper-initialized swiper-horizontal">
-                <div className="swiper-wrapper translate-x-0 translate-y-0 transition-transform duration-300 ease-in-out">
-                  {movies?.map((movie) => (
-                    <div
-                      key={movie.id}
-                      className="swiper-slide swiper-slide-next !w-[198.667px] mr-4"
-                    >
-                      <div className="sw-item">
-                        <a className="v-thumbnail" href={movie.href}>
-                          <div className="pin-new m-pin-new">
-                            {movie.labels.map((label) => (
-                              <div key={label} className="line-center line-pd">
-                                {label}
-                              </div>
-                            ))}
-                          </div>
-                          <div>
-                            <img
-                              src={movie.img}
-                              alt={`Xem Phim ${movie.title} Vietsub HD Online - Rophim`}
-                              loading="lazy"
-                            />
-                          </div>
-                        </a>
-                        <div className="info">
-                          <h4 className="item-title lim-1">
-                            <a title={movie.title} href={movie.href}>
-                              {movie.title}
-                            </a>
-                          </h4>
-                          <h4 className="alias-title lim-1">
-                            <a title={movie.alias} href={movie.href}>
-                              {movie.alias}
-                            </a>
-                          </h4>
+              <Swiper
+                loop={true}
+                spaceBetween={16}
+                breakpoints={{
+                  0: {
+                    slidesPerView: 3,
+                    spaceBetween: 8,
+                  },
+                  766: {
+                    slidesPerView: 4,
+                    spaceBetween: 16,
+                  },
+                  1280: {
+                    slidesPerView: 5,
+                    spaceBetween: 16,
+                  },
+                  1400: {
+                    slidesPerView: 6,
+                    spaceBetween: 16,
+                  },
+                  1600: {
+                    slidesPerView: 7,
+                    spaceBetween: 16,
+                  },
+                  1800: {
+                    slidesPerView: 8,
+                    spaceBetween: 16,
+                  },
+                }}
+              >
+                {movies?.map((movie) => (
+                  <SwiperSlide key={movie.id}>
+                    <div className="sw-item">
+                      <a className="v-thumbnail" href={movie.href}>
+                        <div className="pin-new m-pin-new">
+                          {movie.labels.map((label) => (
+                            <div key={label} className="line-center line-pd">
+                              {label}
+                            </div>
+                          ))}
                         </div>
+                        <div>
+                          <img
+                            src={movie.img}
+                            alt={`Xem Phim ${movie.title} Vietsub HD Online - Rophim`}
+                            loading="lazy"
+                          />
+                        </div>
+                      </a>
+                      <div className="info">
+                        <h4 className="item-title lim-1">
+                          <a title={movie.title} href={movie.href}>
+                            {movie.title}
+                          </a>
+                        </h4>
+                        <h4 className="alias-title lim-1">
+                          <a title={movie.alias} href={movie.href}>
+                            {movie.alias}
+                          </a>
+                        </h4>
                       </div>
                     </div>
-                  ))}
-                </div>
-              </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
           </div>
         </div>

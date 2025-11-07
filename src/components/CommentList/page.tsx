@@ -1,4 +1,6 @@
+import { Swiper, SwiperSlide } from "swiper/react";
 import { commentsData } from "./MockData";
+import { Autoplay } from "swiper/modules";
 
 export default function CommentList() {
   return (
@@ -48,78 +50,90 @@ export default function CommentList() {
                     </button>
                   </div>
 
-                  <div className="swiper swiper-initialized swiper-horizontal">
-                    <div className="swiper-wrapper">
-                      <div className="comment-slider">
-                        <div className="comment-track">
-                          {commentsData.map((comment, index) => (
-                            <div
-                              key={comment.id}
-                              className="swiper-slide !w-[270.2px] mr-4"
-                            >
-                              <div className="d-item td-d-item">
-                                <div className="di-poster">
-                                  <img
-                                    alt={`Poster ${comment.movie}`}
-                                    loading="lazy"
-                                    src={comment.poster}
-                                  />
+                  <Swiper
+                    loop={true}
+                    spaceBetween={16}
+                    autoplay={{
+                      delay: 2500,
+                      disableOnInteraction: false,
+                    }}
+                    breakpoints={{
+                      0: {
+                        slidesPerView: 4,
+                        spaceBetween: 16,
+                      },
+                      1280: {
+                        slidesPerView: 4,
+                        spaceBetween: 16,
+                      },
+                      1400: {
+                        slidesPerView: 5,
+                        spaceBetween: 16,
+                      },
+                      1600: {
+                        slidesPerView: 6,
+                        spaceBetween: 16,
+                      },
+                    }}
+                    modules={[Autoplay]}
+                  >
+                    {commentsData.map((comment) => (
+                      <SwiperSlide key={comment.id}>
+                        <div className="d-item td-d-item">
+                          <div className="di-poster">
+                            <img
+                              alt={`Poster ${comment.movie}`}
+                              loading="lazy"
+                              src={comment.poster}
+                            />
+                          </div>
+                          <div className="di-v">
+                            <div className="user-avatar">
+                              <img alt={comment.user} src={comment.avatar} />
+                            </div>
+                            <div className="info">
+                              <div className="comment-header">
+                                <div className="user-name line-center gr-free ">
+                                  <span>
+                                    {comment.user}{" "}
+                                    <i className="fa-solid fa-infinity text-primary ms-2"></i>
+                                  </span>
                                 </div>
-                                <div className="di-v">
-                                  <div className="user-avatar">
-                                    <img
-                                      alt={comment.user}
-                                      src={comment.avatar}
-                                    />
-                                  </div>
-                                  <div className="info">
-                                    <div className="comment-header">
-                                      <div className="user-name line-center gr-free ">
-                                        <span>
-                                          {comment.user}{" "}
-                                          <i className="fa-solid fa-infinity text-primary ms-2"></i>
-                                        </span>
-                                      </div>
-                                    </div>
-                                    <div className="text lim-2">
-                                      {comment.text}
-                                    </div>
-                                    <div className="comment-bottom line-center gap-3 d-flex">
-                                      <div className="item item-up line-center">
-                                        <i className="fa-solid fa-circle-up"></i>
-                                        <span>1</span>
-                                      </div>
-                                      <div className="item item-down line-center">
-                                        <i className="fa-solid fa-circle-down"></i>
-                                        <span>1</span>
-                                      </div>
-                                      <div className="item item-rep line-center">
-                                        <i className="fa-solid fa-message"></i>
-                                        <span>14</span>
-                                      </div>
-                                    </div>
-                                  </div>
+                              </div>
+                              <div className="text lim-2">{comment.text}</div>
+                              <div className="comment-bottom line-center gap-3 d-flex">
+                                <div className="item item-up line-center">
+                                  <i className="fa-solid fa-circle-up"></i>
+                                  <span>1</span>
                                 </div>
-                                <div className="d-thumb">
-                                  <a
-                                    className="v-thumbnail"
-                                    title="Thủy Long Ngâm"
-                                    href="/phim/thuy-long-ngam.lTaoogB3?cid=6908517b80501bdfbee83a90"
-                                  >
-                                    <img
-                                      alt="Xem Phim Thủy Long Ngâm Vietsub HD Online - Rophim"
-                                      loading="lazy"
-                                      src="https://static.nutscdn.com/vimg/300-0/6946fb51134899d6f8b1f0385e72638b.jpg"
-                                    />
-                                  </a>
+                                <div className="item item-down line-center">
+                                  <i className="fa-solid fa-circle-down"></i>
+                                  <span>1</span>
+                                </div>
+                                <div className="item item-rep line-center">
+                                  <i className="fa-solid fa-message"></i>
+                                  <span>14</span>
                                 </div>
                               </div>
                             </div>
-                          ))}
+                          </div>
+                          <div className="d-thumb">
+                            <a
+                              className="v-thumbnail"
+                              title="Thủy Long Ngâm"
+                              href="/phim/thuy-long-ngam.lTaoogB3?cid=6908517b80501bdfbee83a90"
+                            >
+                              <img
+                                alt="Xem Phim Thủy Long Ngâm Vietsub HD Online - Rophim"
+                                loading="lazy"
+                                src="https://static.nutscdn.com/vimg/300-0/6946fb51134899d6f8b1f0385e72638b.jpg"
+                              />
+                            </a>
+                          </div>
                         </div>
-                      </div>
-                    </div>
-                  </div>
+                      </SwiperSlide>
+                    ))}
+                  </Swiper>
                 </div>
               </div>
             </div>
@@ -393,8 +407,6 @@ export default function CommentList() {
                             </a>
                           </div>
                         </div>
-
-                        {/* ...và các slide còn lại tương tự */}
                       </div>
                     </div>
                   </div>

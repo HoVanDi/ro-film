@@ -1,3 +1,4 @@
+import { Swiper, SwiperSlide } from "swiper/react";
 import { topFilm } from "./mockData";
 
 export default function TopFilm() {
@@ -47,58 +48,79 @@ export default function TopFilm() {
                   </svg>
                 </button>
               </div>
-              <div className="swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
-                <div className="swiper-wrapper translate-x-0 translate-y-0 transition-transform duration-300 ease-in-out">
-                  {topFilm?.map((movie) => (
-                    <div
-                      key={movie.id}
-                      className="swiper-slide swiper-slide-active !w-[241.6px] mr-4"
-                    >
-                      <div className="sw-item">
-                        <a className="v-thumbnail" href={movie.href}>
-                          <div className="mask"></div>
-                          <div className="pin-new m-pin-new">
-                            {movie.pins.map((pin, i) => (
-                              <div
-                                key={i}
-                                className={`line-center ${pin.type}`}
-                              >
-                                <span></span>
-                                <strong>{pin.value}</strong>
-                              </div>
-                            ))}
-                          </div>
-                          <div>
-                            <img
-                              alt={`Xem Phim ${movie.title} Vietsub HD Online - Rophim`}
-                              loading="lazy"
-                              src={movie.img}
-                            />
-                          </div>
-                        </a>
+              <Swiper
+                loop={true}
+                spaceBetween={16}
+                breakpoints={{
+                  0: {
+                    slidesPerView: 2,
+                    spaceBetween: 8,
+                  },
+                  766: {
+                    slidesPerView: 3,
+                    spaceBetween: 16,
+                  },
+                  1280: {
+                    slidesPerView: 4,
+                    spaceBetween: 16,
+                  },
+                  1400: {
+                    slidesPerView: 5,
+                    spaceBetween: 16,
+                  },
+                  1600: {
+                    slidesPerView: 6,
+                    spaceBetween: 16,
+                  },
+                  1800: {
+                    slidesPerView: 7,
+                    spaceBetween: 16,
+                  },
+                }}
+              >
+                {topFilm?.map((movie) => (
+                  <SwiperSlide key={movie.id}>
+                    <div className="sw-item">
+                      <a className="v-thumbnail" href={movie.href}>
+                        <div className="mask"></div>
+                        <div className="pin-new m-pin-new">
+                          {movie.pins.map((pin, i) => (
+                            <div key={i} className={`line-center ${pin.type}`}>
+                              <span></span>
+                              <strong>{pin.value}</strong>
+                            </div>
+                          ))}
+                        </div>
+                        <div>
+                          <img
+                            alt={`Xem Phim ${movie.title} Vietsub HD Online - Rophim`}
+                            loading="lazy"
+                            src={movie.img}
+                          />
+                        </div>
+                      </a>
 
-                        <div className="info info-v w-chart">
-                          <div className="number">{movie.number}</div>
-                          <h4 className="item-title lim-1">
-                            <a title={movie.title} href={movie.href}>
-                              {movie.title}
-                            </a>
-                          </h4>
-                          <div className="alias-title lim-1">{movie.alias}</div>
+                      <div className="info info-v w-chart">
+                        <div className="number">{movie.number}</div>
+                        <h4 className="item-title lim-1">
+                          <a title={movie.title} href={movie.href}>
+                            {movie.title}
+                          </a>
+                        </h4>
+                        <div className="alias-title lim-1">{movie.alias}</div>
 
-                          <div className="info-line">
-                            {movie.tags.map((tag, i) => (
-                              <div key={i} className="tag-small">
-                                {i === 0 ? <strong>{tag}</strong> : tag}
-                              </div>
-                            ))}
-                          </div>
+                        <div className="info-line">
+                          {movie.tags.map((tag, i) => (
+                            <div key={i} className="tag-small">
+                              {i === 0 ? <strong>{tag}</strong> : tag}
+                            </div>
+                          ))}
                         </div>
                       </div>
                     </div>
-                  ))}
-                </div>
-              </div>
+                  </SwiperSlide>
+                ))}
+              </Swiper>
             </div>
           </div>
         </div>
